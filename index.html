@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 5th Month Anniversary ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Consolas, monospace;
+}
+
+body{
+    background:#0d1117;
+    color:#58a6ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    background:#161b22;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 25px #00ffcc;
+}
+
+.title{
+    color:#00ffcc;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+#typing{
+    font-size:20px;
+    line-height:35px;
+    white-space:pre-line;
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:1;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+💻 VS Code Love Terminal
+</div>
+
+<div id="typing"></div>
+
+</div>
+
+<script>
+
+const message=`> npm start love ❤️
+
+Loading Memories...
+████████████ 100%
+
+Welcome Raj ❤️ Sneha
+
+Happy 5th Month Anniversary ❤️
+
+Paanch mahine pehle meri zindagi ki
+sabse khoobsurat update install hui...
+
+Us update ka naam hai...
+
+"Sneha ❤️"
+
+Tum meri life ka
+Best Commit ho.
+
+Kabhi Delete nahi karunga...
+Kabhi Replace nahi karunga...
+
+while(alive){
+
+   Love++;
+   Care++;
+   Respect++;
+   Happiness++;
+
+}
+
+Compilation Successful ❤️
+
+Output:
+
+I LOVE YOU FOREVER ❤️
+
+- Raj`;
+
+let i=0;
+
+function typeWriter(){
+
+if(i<message.length){
+
+document.getElementById("typing").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,35);
+
+}
+
+}
+
+typeWriter();
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,250);
+
+</script>
+
+</body>
+</html>
