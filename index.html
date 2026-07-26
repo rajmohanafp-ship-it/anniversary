@@ -7,58 +7,83 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Consolas, monospace;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Consolas,monospace;
 }
 
 body{
-    background:#0d1117;
-    color:#58a6ff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    overflow:hidden;
+background:#0d1117;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:#fff;
 }
 
 .container{
-    width:90%;
-    max-width:900px;
-    background:#161b22;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 0 25px #00ffcc;
+width:90%;
+max-width:900px;
+background:#161b22;
+border-radius:15px;
+padding:30px;
+box-shadow:0 0 30px #00ffc3;
 }
 
 .title{
-    color:#00ffcc;
-    font-size:30px;
-    margin-bottom:20px;
+color:#00ffc3;
+font-size:28px;
+margin-bottom:20px;
 }
 
 #typing{
-    font-size:20px;
-    line-height:35px;
-    white-space:pre-line;
+font-size:20px;
+line-height:32px;
+white-space:pre-line;
+color:#58a6ff;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:18px;
+background:#ff006a;
+color:white;
+border:none;
+border-radius:50px;
+cursor:pointer;
+display:none;
+}
+
+button:hover{
+transform:scale(1.05);
 }
 
 .heart{
-    position:absolute;
-    color:red;
-    animation:float 6s linear infinite;
+position:absolute;
+font-size:30px;
+animation:fly 6s linear infinite;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-    to{
-        transform:translateY(-100vh);
-        opacity:1;
-    }
+@keyframes fly{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-120vh);
+opacity:1;
+}
+}
+
+#letter{
+display:none;
+margin-top:25px;
+font-size:20px;
+line-height:35px;
+color:white;
 }
 </style>
 
@@ -74,90 +99,142 @@ body{
 
 <div id="typing"></div>
 
+<button onclick="openHeart()">
+❤️ Open My Heart
+</button>
+
+<div id="letter">
+
+<h2>Dear Sneha ❤️</h2>
+
+<br>
+
+Thank you for making my life beautiful.
+
+These 5 months have been the happiest chapter of my life.
+
+You are not just my wife...
+
+You are my peace,
+my strength,
+my smile,
+my home.
+
+No matter what happens...
+
+I Promise...
+
+I'll always choose You.
+
+Forever.
+
+❤️
+
+<br><br>
+
+<h2>Happy 5th Month Anniversary ❤️</h2>
+
+<h3>- Yours Raj</h3>
+
+</div>
+
 </div>
 
 <script>
 
-const message=`> npm start love ❤️
+const msg=`> npm run love
 
 Loading Memories...
-████████████ 100%
+██████████████ 100%
 
-Welcome Raj ❤️ Sneha
+Developer : Raj ❤️
 
-Happy 5th Month Anniversary ❤️
+Target : Sneha ❤️
 
-Paanch mahine pehle meri zindagi ki
-sabse khoobsurat update install hui...
+Status : Connected Successfully ✔
 
-Us update ka naam hai...
-
-"Sneha ❤️"
-
-Tum meri life ka
-Best Commit ho.
-
-Kabhi Delete nahi karunga...
-Kabhi Replace nahi karunga...
+Initializing Forever...
 
 while(alive){
 
-   Love++;
-   Care++;
-   Respect++;
-   Happiness++;
+ Love++;
+ Care++;
+ Respect++;
+ Happiness++;
 
 }
 
 Compilation Successful ❤️
 
-Output:
-
-I LOVE YOU FOREVER ❤️
-
-- Raj`;
+Click below...`;
 
 let i=0;
 
-function typeWriter(){
+function type(){
 
-if(i<message.length){
+if(i<msg.length){
 
-document.getElementById("typing").innerHTML+=message.charAt(i);
+document.getElementById("typing").innerHTML+=msg.charAt(i);
 
 i++;
 
-setTimeout(typeWriter,35);
+setTimeout(type,35);
+
+}else{
+
+document.querySelector("button").style.display="inline-block";
 
 }
 
 }
 
-typeWriter();
+type();
 
-function createHeart(){
+function openHeart(){
 
-const heart=document.createElement("div");
+document.getElementById("letter").style.display="block";
 
-heart.className="heart";
+fireworks();
 
-heart.innerHTML="❤️";
+}
 
-heart.style.left=Math.random()*100+"vw";
+function heart(){
 
-heart.style.fontSize=(20+Math.random()*30)+"px";
+const h=document.createElement("div");
 
-document.body.appendChild(heart);
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(h);
 
 setTimeout(()=>{
 
-heart.remove();
+h.remove();
 
 },6000);
 
 }
 
-setInterval(createHeart,250);
+setInterval(heart,250);
+
+function fireworks(){
+
+for(let i=0;i<150;i++){
+
+setTimeout(()=>{
+
+heart();
+
+},i*40);
+
+}
+
+}
 
 </script>
 
