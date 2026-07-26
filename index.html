@@ -3,240 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 5th Month Anniversary ❤️</title>
+<title>Raj ❤️ Sneha</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Consolas,monospace;
-}
-
-body{
-background:#0d1117;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:#fff;
-}
-
-.container{
-width:90%;
-max-width:900px;
-background:#161b22;
-border-radius:15px;
-padding:30px;
-box-shadow:0 0 30px #00ffc3;
-}
-
-.title{
-color:#00ffc3;
-font-size:28px;
-margin-bottom:20px;
-}
-
-#typing{
-font-size:20px;
-line-height:32px;
-white-space:pre-line;
-color:#58a6ff;
-}
-
-button{
-margin-top:30px;
-padding:15px 35px;
-font-size:18px;
-background:#ff006a;
-color:white;
-border:none;
-border-radius:50px;
-cursor:pointer;
-display:none;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-.heart{
-position:absolute;
-font-size:30px;
-animation:fly 6s linear infinite;
-}
-
-@keyframes fly{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-100%{
-transform:translateY(-120vh);
-opacity:1;
-}
-}
-
-#letter{
-display:none;
-margin-top:25px;
-font-size:20px;
-line-height:35px;
-color:white;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+    
+    <div id="welcome">
+        <h1>❤️ Welcome Sneha ❤️</h1>
+        <p>Happy 5th Month Anniversary 🥰</p>
+    
+        <button id="startBtn">
+            Enter My Heart ❤️
+        </button>
+    </div>
 
-<div class="container">
+<div id="loader">
 
-<div class="title">
-💻 VS Code Love Terminal
+<div class="terminal">
+
+<div class="topbar">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+<span>VS Code Terminal</span>
 </div>
 
-<div id="typing"></div>
+<pre id="typing"></pre>
 
-<button onclick="openHeart()">
+</div>
+
+</div>
+
+<div id="main">
+
+<div class="card">
+
+<img src="photo.jpg" class="photo">
+
+<h1>❤️ Raj & Sneha ❤️</h1>
+
+<h2>Happy 5th Month Anniversary</h2>
+
+<p class="quote">
+
+"Every beautiful memory of my life begins with You."
+
+</p>
+
+<button id="btn">
+
 ❤️ Open My Heart
+
 </button>
+
+</div>
 
 <div id="letter">
 
 <h2>Dear Sneha ❤️</h2>
 
-<br>
+<p>
 
-Thank you for making my life beautiful.
+These five months have been the most beautiful chapter of my life.
 
-These 5 months have been the happiest chapter of my life.
+Thank you for standing beside me...
 
-You are not just my wife...
+for smiling with me...
 
-You are my peace,
-my strength,
-my smile,
-my home.
+for believing in me...
 
-No matter what happens...
+and for making my ordinary life feel extraordinary.
 
-I Promise...
+Every heartbeat whispers your name.
+
+Every prayer includes your happiness.
+
+No matter where life takes us...
 
 I'll always choose You.
 
-Forever.
+Again...
+
+Again...
+
+and Forever...
 
 ❤️
 
-<br><br>
+</p>
+<p style="text-align:center;font-size:22px;color:#ff4da6;margin-top:25px;">
+    ❤️ Every day with you is my favorite day. ❤️
+    </p>
 
-<h2>Happy 5th Month Anniversary ❤️</h2>
+<h3>
 
-<h3>- Yours Raj</h3>
+Happy 5th Month Anniversary ❤️
+
+</h3>
+
+<h4>
+
+Forever Yours,
+
+Raj ❤️
+
+</h4>
 
 </div>
 
 </div>
 
-<script>
+<script src="script.js"></script>
 
-const msg=`> npm run love
-
-Loading Memories...
-██████████████ 100%
-
-Developer : Raj ❤️
-
-Target : Sneha ❤️
-
-Status : Connected Successfully ✔
-
-Initializing Forever...
-
-while(alive){
-
- Love++;
- Care++;
- Respect++;
- Happiness++;
-
-}
-
-Compilation Successful ❤️
-
-Click below...`;
-
-let i=0;
-
-function type(){
-
-if(i<msg.length){
-
-document.getElementById("typing").innerHTML+=msg.charAt(i);
-
-i++;
-
-setTimeout(type,35);
-
-}else{
-
-document.querySelector("button").style.display="inline-block";
-
-}
-
-}
-
-type();
-
-function openHeart(){
-
-document.getElementById("letter").style.display="block";
-
-fireworks();
-
-}
-
-function heart(){
-
-const h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.fontSize=(20+Math.random()*30)+"px";
-
-document.body.appendChild(h);
-
-setTimeout(()=>{
-
-h.remove();
-
-},6000);
-
-}
-
-setInterval(heart,250);
-
-function fireworks(){
-
-for(let i=0;i<150;i++){
-
-setTimeout(()=>{
-
-heart();
-
-},i*40);
-
-}
-
-}
-
-</script>
-
+<audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
